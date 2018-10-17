@@ -4,10 +4,12 @@
 
 int main() {
     file *fp;
-    fp = fopen("../demo.txt","w+");
-    fprintf(fp, "Hi, i am luyen\n");
-    fseek(fp,9, seek_set);
-    fprintf(fp,"xuan hung");
+    char myvar[255];
+    int age;
+    fp = fopen("../demo.txt", "r+");
+    while (fgets(myvar, 255, fp) != NULL){
+        printf("%s", myvar);
+    }
     fclose(fp);
     return 0;
 }
